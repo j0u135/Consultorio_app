@@ -1,0 +1,16 @@
+<h3>Información del Médico</h3>
+
+<div>
+    <ul>
+        <li>Nombre: <%= @medico.nombre %></li>
+        <li>Primer Apellido: <%= @medico.primer_ap %></li>
+        <li>Segundo Apellido: <%= @medico.segundo_ap %></li>
+        <li>email: <%= @medico.email %></li>
+    </ul>
+</div>
+<div>
+    <%= link_to "Editar", edit_medico_path(@medico.id) %>
+</div>
+<div>
+    <%= link_to "Regresar", medicos_path %>
+</div>

@@ -1,0 +1,10 @@
+<h3>Listado de Médicos</h3>
+
+<ul>
+<% @medicos.each do |medico| %>
+    <li><%= link_to medico.nombre + " " + medico.primer_ap + " " + medico.segundo_ap, medico_path(medico.id) %></li>
+<% end %>
+</ul>
+<div>
+    <%= link_to 'Agregar Nuevo Médico', new_medico_path() %>
+</div>

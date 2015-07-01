@@ -1,0 +1,31 @@
+<h3>Agregar Médico</h3>
+<hr/>
+<% if @medico.errors.any? %>
+    <div id="errores">
+        <b/><h4>Validar los siguientes errores:</h4>
+        <ul>
+            <% @medico.errors.full_messages.each do |error_form| %>
+                <li><%= error_form %></li>
+            <% end %>
+        </ul>
+    <div>
+<% end %>
+    <%= form_for @medico do |f| %>
+        <%= f.label :nombre %>
+        <%= f.text_field :nombre %>
+        
+        <%= f.label :primer_ap%>
+        <%= f.text_field :primer_ap%>
+        
+        <%= f.label :segundo_ap %>
+        <%= f.text_field :segundo_ap %>
+        
+        <%= f.label :email %>
+        <%= f.text_field :email%>
+        
+        <%= f.submit 'Guardar' %>
+    <% end %>
+</div>
+<div>
+    <%= link_to "Cancelar", medicos_path() %>
+</div>

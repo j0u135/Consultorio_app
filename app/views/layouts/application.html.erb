@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Workspace</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="cabecera">
+  <h1>Consultorio</h1>
+</div>
+<div id="mensajes">
+  <%= render 'layouts/mensajes' %>
+</div>
+<%= yield %>
+
+</body>
+</html>
