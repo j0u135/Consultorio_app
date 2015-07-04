@@ -1,0 +1,17 @@
+<%= render 'shared/page_title', title: 'Listado de Pacientes' %>
+
+<% if @pacientes.count != 0 %>
+    <ul>
+        <% @pacientes.each do |paciente| %>
+        <li>
+            <%= link_to paciente.nombre + " " + paciente.primer_ap + " " + paciente.segundo_ap, paciente_path(paciente.id) %>
+        </li>
+        <% end %>
+</ul>
+<% else %>
+    <h4>"No existen Pacientes."</h4>
+<% end %>
+
+<div>
+    <%= link_to 'Agregar un Nuevo Paciente', new_paciente_path() %>
+</div>

@@ -1,0 +1,13 @@
+<%= render 'shared/page_title', title: 'Detalle del Paciente.' %>
+
+<div>
+    <ul>
+        <li>Nombre: <%= @paciente.nombre %></li>
+        <li>Apellido Paterno: <%= @paciente.primer_ap %></li>
+        <li>Apellido Materno: <%= @paciente.segundo_ap %></li>
+        <li>email: <%= @paciente.email %></li>
+        <li>Peso: <%= @paciente.peso %></li>
+        <li>Fecha de Nacimiento: <%= @paciente.fecha_nac %></li>
+    </ul>
+</div>
+<%= link_to 'Regresar', pacientes_path %>
