@@ -1,0 +1,12 @@
+<div>
+    <% if obj.errors.any? %>
+        <div id="errores">
+            <b/><h4>Validar los siguientes errores:</h4>
+            <ul>
+                <% obj.errors.full_messages.each do |error_form| %>
+                    <li><%= error_form %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+</div>

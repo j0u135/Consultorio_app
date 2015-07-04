@@ -1,0 +1,19 @@
+<%= render 'shared/errors', obj:@medico %>
+
+<div>
+    <%= form_for @medico do |f| %>
+        <%= f.label :nombre %>
+        <%= f.text_field :nombre %>
+        
+        <%= f.label :primer_ap%>
+        <%= f.text_field :primer_ap%>
+        
+        <%= f.label :segundo_ap %>
+        <%= f.text_field :segundo_ap %>
+        
+        <%= f.label :email %>
+        <%= f.text_field :email%>
+        
+        <%= f.submit (@medico.new_record? ? 'Crear' : 'Guardar' ) %>
+    <% end %>
+</div>
