@@ -23,7 +23,20 @@ class PacientesController < ApplicationController
         end
     end
     
+    def edit
+        @paciente = Paciente.find(params[:id])
+    end
     
+    def update
+        @paciente = Paciente.find(params[:id])
+        if @paciente.update(paciente_params)
+            flash[:success] = "Se ha guardado correctamente la información."
+            redirect_to paciente_path(@paciente)
+        else
+            flash[:error] = "Ha ocurrido un error al guardar los datos del paciente."
+            redirect_to :edit
+        end
+    end
     
     private
         def paciente_params

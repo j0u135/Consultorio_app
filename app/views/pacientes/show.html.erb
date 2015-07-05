@@ -10,4 +10,7 @@
         <li>Fecha de Nacimiento: <%= @paciente.fecha_nac %></li>
     </ul>
 </div>
-<%= link_to 'Regresar', pacientes_path %>
+<div>
+    <%= link_to 'Editar Datos de Paciente', edit_paciente_path(@paciente.id) %>
+    <%= link_to 'Regresar', pacientes_path %>
+</div>

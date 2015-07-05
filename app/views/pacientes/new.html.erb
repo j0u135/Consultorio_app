@@ -2,29 +2,8 @@
 
 <%= render 'shared/errors', obj:@paciente %>
 
-<div>
-    <%= form_for @paciente do |f| %>
-        <%= f.label :nombre %>
-        <%= f.text_field :nombre %>
-        
-        <%= f.label :primer_ap%>
-        <%= f.text_field :primer_ap%>
-        
-        <%= f.label :segundo_ap %>
-        <%= f.text_field :segundo_ap %>
-        
-        <%= f.label :email %>
-        <%= f.text_field :email %>
-        
-        <%= f.label :peso %>
-        <%= f.text_field :peso %>
-        
-        <%= f.label :fecha_nac %>
-        <%= f.datetime_field :fecha_nac%>
-        
-        <%= f.submit 'Crear' %>
-    <% end %>
-</div>
+<%= render 'form' %>
+
 <div>
     <%= link_to 'Regresar', pacientes_path %>
 </div>
