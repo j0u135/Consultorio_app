@@ -9,5 +9,12 @@ class Medico < ActiveRecord::Base
     validates :primer_ap, presence: true, length: { minimum: 2, maximum: 50}
     validates :segundo_ap, presence: true, length: { minimum: 2, maximum: 50}, allow_blank: true
     validates :email, presence: true, uniqueness: { case_sensitive: false }
-
+    
+    after_save :do_create_calendario
+    
+    private
+        def do_create_calendario
+            self.create_calendario
+        end
+    
 end

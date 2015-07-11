@@ -14,10 +14,16 @@ class MedicosController < ApplicationController
     
     def create
         @medico = Medico.new(medico_params)
-        if @medico.save
-            flash[:success] = "Se ha agregado correctamente el nuevo médico."
-            redirect_to medicos_path
-        else
+        begin
+            if @medico.save
+                flash[:success] = "Se ha agregado correctamente el nuevo médico."
+                redirect_to medicos_path
+            else
+                render :new
+            end
+        rescue => e
+            logger.error "letter_controller::create => exception"
+            flash[:error] = "Hubo un problema UPS."
             render :new
         end
     end

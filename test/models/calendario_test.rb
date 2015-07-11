@@ -9,7 +9,7 @@ class CalendarioTest < ActiveSupport::TestCase
             segundo_ap: 'Garcia',
             email: 'miguel@gmail.com'
         )
-        @calendario = @medico.build_calendario()
+        @calendario = @medico.calendario
     end
     
     test 'calendario debe ser valido' do
@@ -20,5 +20,6 @@ class CalendarioTest < ActiveSupport::TestCase
         @calendario.medico_id = nil
         assert_not @calendario.valid?
     end
+    
     
 end

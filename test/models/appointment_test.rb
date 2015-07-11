@@ -9,9 +9,7 @@ class AppointmentTest < ActiveSupport::TestCase
             segundo_ap: 'Garcia',
             email: 'miguel2@gmail.com'
         )
-        @calendario = @medico.build_calendario()
-        @calendario.save
-        @appointment = @calendario.appointments.build(fecha: '2015-07-01', hora: '12:00:00')
+        @appointment = @medico.calendario.appointments.build(fecha: '2015-07-01', hora: '12:00:00', paciente_id:5)
     end
     
     test 'appointment debe ser valido' do
@@ -27,5 +25,9 @@ class AppointmentTest < ActiveSupport::TestCase
         @appointment.calendario_id = nil
         assert_not @appointment.valid?
     end
-    
+
+    test 'paciente_id debe estar presente' do
+        @appointment.paciente_id = nil
+        assert_not @appointment.valid?
+    end    
 end

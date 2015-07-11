@@ -5,5 +5,6 @@ class Appointment < ActiveRecord::Base
    
    validates :fecha, presence: true
    validates :calendario_id, presence: true
+   validates :paciente_id, presence: true
     
 end
