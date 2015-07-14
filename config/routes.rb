@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     
     resources :medicos do
         resources :calendario, only: [:index] do
-            resources :appointments, only: [:new]
+            resources :appointments, only: [:index, :new, :create ]
         end
     end
     

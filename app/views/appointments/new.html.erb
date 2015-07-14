@@ -1,0 +1,16 @@
+<div>
+    <%= render 'shared/errors', obj:@appointment %>
+</div>
+<div>
+    <%= form_for [@medico, @calendario, @appointment] do |f| %>
+        
+        <%= f.label :fecha %>
+        <%= f.text_field :fecha %>
+        
+        <%= f.label :hora %>
+        <%= f.text_field :hora %>
+
+        <%= f.submit 'Crear' %>
+                
+    <% end %>
+</div>

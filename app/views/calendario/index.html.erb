@@ -1,5 +1,10 @@
-<%= render 'shared/page_title', title: 'Calendario' %>
-
-<% @appointments.each do |appointment| %>
+<div>
+    <%= render 'shared/page_title', title: 'Calendario' %>
     
-<% end %>
+    <% @appointments.each do |appointment| %>
+        
+    <% end %>
+</div>
+<div>
+    <%= link_to 'Nueva Cita', new_medico_calendario_appointment_path(@medico, @calendario) %>
+</div>
