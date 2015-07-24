@@ -9,6 +9,12 @@
         
         <%= f.label :hora %>
         <%= f.text_field :hora %>
+        
+        <%= f.label :hora %>
+        <%= f.text_field :hora %>
+        
+        <h3>Seleccione un paciente: </h3>
+        <%= render 'pacientes/list_pacientes' %>
 
         <%= f.submit 'Crear' %>
                 

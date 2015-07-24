@@ -1,0 +1,11 @@
+<% if @pacientes.count != 0 %>
+    <ul>
+        <% @pacientes.each do |paciente| %>
+        <li id=<%= paciente.id %>>
+            <%= paciente.nombre + " " + paciente.primer_ap + " " + paciente.segundo_ap %>
+        </li>
+        <% end %>
+</ul>
+<% else %>
+    <h4>"No existen Pacientes."</h4>
+<% end %>

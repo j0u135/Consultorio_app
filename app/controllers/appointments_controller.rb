@@ -4,6 +4,7 @@ class  AppointmentsController < ApplicationController
         @medico = Medico.find(params[:medico_id])
         @calendario = @medico.calendario
         @appointment = @calendario.appointments.new
+        @pacientes = Paciente.all
     end
     
     def create
