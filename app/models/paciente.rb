@@ -1,4 +1,7 @@
 class Paciente < ActiveRecord::Base
+
+	searchkick
+
     has_many :consults
     has_many :medicos, through: :consults
     has_one :historial

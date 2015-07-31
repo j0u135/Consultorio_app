@@ -11,13 +11,3 @@
 <% else %>
     <h4>"No existen Pacientes."</h4>
 <% end %>
-
-<h3>Búsqueda de pacientes.</h3>
-<%= form_tag search_pacientes_path, method: :get do %>
-	<%= text_field_tag :search, params[:search] %>
-	<%= submit_tag "Buscar", name: nil %>
-<% end %>
-
-<div>
-    <%= link_to 'Agregar un Nuevo Paciente', new_paciente_path() %>
-</div>
